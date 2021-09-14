@@ -41,8 +41,9 @@ function App() {
 
   return (
     <div>
+      <h1> Ofertas </h1>
 
-      <button class ="btn bg-yellow-500 hover:bg-yellow-400 text-white font-bold"> <Link to = "/crud"> CRUD </Link> </button>
+      
 
       <div>
         {/* <h1 className="w-100% b-2 text-sm">Ofertas</h1> */}
@@ -53,7 +54,7 @@ function App() {
       })
 
       }
-
+      <h1> Mas populares </h1>
       <hr/>
 
       {productos.map((producto, index) => {

@@ -5,21 +5,21 @@ import {
     Route
 } from "react-router-dom";
 import Banner from "../componentes/Banner";
-import CrudProducto from "../componentes/CrudProducto";
 
 import Navbar from "../componentes/Navbar";
 import App from "../containers/App"
-
+import { Crud } from "../componentes/Crud";
 
 export default class AppRouters extends Component {
     render() {
         return (
                 <BrowserRouter>
+                
                 <Navbar/>
                 <Banner/>
                 <Switch>
                     <Route exact path="/" component={App} />
-                    <Route exact path ="/crud">{CrudProducto}</Route>
+                    <Route exact path="/crud" component={Crud} />
                 </Switch>
             </BrowserRouter>
             

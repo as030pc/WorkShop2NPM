@@ -1,10 +1,10 @@
 import React from 'react'
-
+import {Link} from "react-router-dom"
 const Navbar = ({ fixed }) => {
     const [navbarOpen, setNavbarOpen] = React.useState(false);
     return (
         <>
-          
+          <button className ="btn bg-yellow-500 hover:bg-yellow-400 text-white font-bold"> <Link to = "/crud"> CRUD </Link> </button>
           <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-white mb-3">
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
