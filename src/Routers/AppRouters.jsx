@@ -5,6 +5,7 @@ import {
     Route
 } from "react-router-dom";
 import Banner from "../componentes/Banner";
+import CrudProducto from "../componentes/CrudProducto";
 
 import Navbar from "../componentes/Navbar";
 import App from "../containers/App"
@@ -18,6 +19,7 @@ export default class AppRouters extends Component {
                 <Banner/>
                 <Switch>
                     <Route exact path="/" component={App} />
+                    <Route exact path ="/crud">{CrudProducto}</Route>
                 </Switch>
             </BrowserRouter>
             

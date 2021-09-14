@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import CardsFrutas from '../componentes/CardsFrutas'
 import CardsProductos from '../componentes/CardsProductos'
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 
 function App() {
@@ -40,6 +41,8 @@ function App() {
 
   return (
     <div>
+
+      <button class ="btn bg-yellow-500 hover:bg-yellow-400 text-white font-bold"> <Link to = "/crud"> CRUD </Link> </button>
 
       <div>
         {/* <h1 className="w-100% b-2 text-sm">Ofertas</h1> */}

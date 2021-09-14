@@ -9,17 +9,17 @@ const CardsFrutas = ({ frutas }) => {
     return (
 
         <div className="tarjetaProductos">
-
-            <span>{(((precio-descuento)/precio)*100).toFixed(0)} % dto</span>
-            <img src={imagen} alt="imagen producto" />
-
-            <p><b>${precio}</b><del>${descuento}</del></p>
-            <p>{nombre}</p>
-            <br />
-            {/* El boton lleva una clase con el id. para saber que producto 
+            <div>
+                <span>{(((precio - descuento) / precio) * 100).toFixed(0)} % dto</span>
+                <img src={imagen} alt="imagen producto" />
+                <p><b>${precio}</b><del>${descuento}</del></p>
+                <p>{nombre}</p>
+                <br />
+                {/* El boton lleva una clase con el id. para saber que producto 
                 estamos agg al carrito
                  */}
-            <button className={id} id="botonProducto">Agregar</button>
+                <button className={id} id="botonProducto">Agregar</button>
+            </div>
         </div>
 
     )

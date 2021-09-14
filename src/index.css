@@ -25,5 +25,7 @@
     padding: 0.5em;
 }
 .tarjetaProductos{
-    display: block;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 }

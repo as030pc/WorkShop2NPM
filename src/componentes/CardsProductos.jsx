@@ -2,14 +2,14 @@ import React from 'react'
 
 //importamos las props de App.jsx las cuales vienen con el nombre de "info"
 // y desestructuramos la data para pasarsela al "card"
-const CardsProductos = ({producto}) => {
+const CardsProductos = ({ producto }) => {
 
-    const {id, nombre, precio, cantidad, imagen} = producto
+    const { id, nombre, precio, cantidad, imagen } = producto
 
     return (
-            <div className="tarjetaProductos">
+        <div className="tarjetaProductos">
+            <div>
                 <img src={imagen} alt="imagen producto" />
-
                 <p><b>${precio}</b></p>
                 <p>{nombre}</p>
                 <br />
@@ -19,6 +19,7 @@ const CardsProductos = ({producto}) => {
                  */}
                 <button className={id} id="botonProducto">Agregar</button>
             </div>
+        </div>
     )
 }
 
