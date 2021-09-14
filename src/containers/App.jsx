@@ -41,10 +41,7 @@ function App() {
 
   return (
     <div>
-      <h1> Ofertas </h1>
-
-      
-
+      <h1> <b>Ofertas</b> </h1>
       <div>
         {/* <h1 className="w-100% b-2 text-sm">Ofertas</h1> */}
       </div>
@@ -54,9 +51,10 @@ function App() {
       })
 
       }
-      <h1> Mas populares </h1>
+      
       <hr/>
-
+      
+      <h1> <b>Mas populares</b> </h1>
       {productos.map((producto, index) => {
 
         return <CardsProductos key={index} producto={producto} />

@@ -35,19 +35,21 @@ const CardsProductos = ({ producto }) => {
                                         className="p-1 ml-auto bg-yellow-500 border-0 text-black opacity-100 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
                                         onClick={() => abrirModal()}
                                     >
-                                        <span id="x" className="bg-yellow-500 text-black  h-6 w-6 text-2xl block outline-none focus:outline-none" >
+                                        <span id="x" className="bg-yellow-500 text-black  h-6 w-6 text-2xl block outline-none focus:outline-none">
                                             X
                                         </span>
                                     </button>
                                 </div>
                                 {/*body*/}
-                                <div className="relative p-6 flex-auto">
-                                    <img src={imagen} alt="imagen Producto" width="350" height="350" />
+                                <div className="relative p-6 flex-auto" id="detalle">
+                                    <img src={imagen} alt="imagen Producto" width="472" height="372" />
+                                    <div>
                                     <h3>{nombre}</h3>
                                     <h4>{precio}/udad</h4>
                                     <button className="bg-yellow-500" >
                                         Agregar
                                     </button>
+                                    </div>
                                 </div>
                                 {/*footer*/}
                             </div>

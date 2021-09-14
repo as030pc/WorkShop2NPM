@@ -45,13 +45,15 @@ const CardsFrutas = ({ frutas }) => {
                   </button>
                 </div>
                 {/*body*/}
-                <div className="relative p-6 flex-auto">
-                  <img src={imagen} alt="imagen Producto" width="350" height="350" />
+                <div className="relative p-6 flex-auto detalle" id="detalle2">
+                  <img src={imagen} alt="imagen Producto" width="472" height="372" />
+                  <div>
                   <h3>{nombre}</h3>
                   <h4>{precio}/Kg</h4>
                   <button className="bg-yellow-500 " >
                     Agregar
                   </button>
+                  </div>
                 </div>
                 {/*footer*/}
               </div>

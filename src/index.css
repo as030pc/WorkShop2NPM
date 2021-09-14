@@ -37,3 +37,27 @@
 #x {
     color:black;
 }
+#detalle{
+    display: flex ;
+    justify-content: space-around;
+    align-items: center;
+}
+#detalle2{
+    display: flex ;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contenedor-carrito{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.carrito{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    
+}
