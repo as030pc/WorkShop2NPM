@@ -2,3 +2,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* Variables */
+:root{
+    --color1-primary: rgb(228, 160, 35);
+    --color2-secondary: rgb(165, 129, 76);
+    --color3-tertiary: rgb(85, 124, 241);
+}
+
+
+/* Estilos navbar */
+
+/* .clase1{
+    background-color: var(--color1-primary);
+} */
+
+#botonProducto{
+    background-color: var(--color1-primary);
+    border-radius: 1em;
+    color: white;
+    padding: 0.5em;
+}
+.tarjetaProductos{
+    display: block;
+}
