@@ -74,12 +74,12 @@ export default function Carrito() {
                     <div className="absolute inset-0 px-4 sm:px-6">
                       <div className="h-full border-2 border-solid border-gray-200  contenedor-carrito" aria-hidden="true">
                       <div className="carrito">
-                            <img src="https://res.cloudinary.com/axginterprise/image/upload/v1631660221/Family_Values_Shopping_b2sgpm.png"></img>
-                            <h1 className="text-lg font-medium">Tu canasta esta vacia</h1>
-                            <button class="bg-yellow-500 text-white active:bg-yellow-500 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" >
+                            {/* <img src="https://res.cloudinary.com/axginterprise/image/upload/v1631660221/Family_Values_Shopping_b2sgpm.png"></img> */}
+                            <h1 className="text-lg font-medium">Tu productos</h1>
+                            {/* <button class="bg-yellow-500 text-white active:bg-yellow-500 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" >
                         
                               Agregar Productos
-                            </button>
+                            </button> */}
 
                             {carrito.map(producto => {
                                   return(
