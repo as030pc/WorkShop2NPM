@@ -9,6 +9,7 @@
     --color1-primary: rgb(228, 160, 35);
     --color2-secondary: rgb(165, 129, 76);
     --color3-tertiary: rgb(85, 124, 241);
+    --color4-fourth: rgba(167, 108, 0, 0.705);
 }
 
 
@@ -28,7 +29,7 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    margin:30px;
+    margin:0px;
     width:150px;
     
 
@@ -60,4 +61,13 @@
     align-items:center;
     justify-content:center;
     
+}
+#descuento{
+border: 1px solid black;
+border-radius: 2em;
+width:45px;
+height:16px;
+padding: 0.15em;
+margin-bottom: 2em;
+color: var(--color4-fourth);
 }

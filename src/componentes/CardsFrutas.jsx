@@ -14,7 +14,7 @@ const CardsFrutas = ({ frutas }) => {
 
     <div className="tarjetaProductos">
       <div>
-        <span>{(((precio - descuento) / precio) * 100).toFixed(0)} % dto</span>
+        <span id="descuento" className="bg-yellow-400">{(((precio - descuento) / precio) * 100).toFixed(0)} % dto</span>
         <img src={imagen} alt="imagen producto" />
         <p><b>${precio}</b><del>${descuento}</del></p>
         <p>{nombre}</p>
