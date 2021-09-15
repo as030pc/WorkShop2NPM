@@ -83,6 +83,15 @@ export const Crud = () => {
 
     }
 
+    const peticionDelete = async () => {
+        await axios.delete(url+form.id)
+        .then(response => {
+            peticionGet();
+        }).catch(error => {
+            console.log(error.message);
+        })
+    }
+
 
 
     // console.log(productos)
@@ -98,12 +107,13 @@ export const Crud = () => {
                 }
                 <table className="m-20">
                     {/* Cabecera tabla */}
-                    <thead className="bg-dark">
+                    <thead className="bg-gray-300">
                         <tr>
-                            <th>item</th>
-                            <th>Producto</th>
-                            <th>Cantidad</th>
-                            <th>Precio</th>
+                            {/* <th>item</th> */}
+                            <th className="px-20">Producto</th>
+                            <th className="px-20">Cantidad</th>
+                            <th className="px-20">Precio</th>
+                            <th className="px-20">Seleccionar</th>
                         </tr>
                     </thead>
                     <hr style={{ height: "3px" }, { color: "black" }} />
@@ -111,13 +121,13 @@ export const Crud = () => {
                     <tbody>
                         {productos.map(producto => {
                             return (
-                                <tr>
-                                    <th>{producto.id}</th>
+                                <tr className="my-2">
+                                    {/* <th className="py-3">{producto.id}</th> */}
                                     <th>{producto.nombre}</th>
                                     <th>{producto.cantidad}</th>
                                     <th>{producto.precio}</th>
-                                    <button onClick = {()=>seleccionarProducto(producto)} className="bg-gray-300 mr-1 rounded-lg p-1"> Modificar</button> 
-                                    <button onClick = {()=>seleccionarProducto(producto)}  className="bg-gray-300 mr-1 rounded-lg p-1"> Eliminar </button>  
+                                    <button onClick = {()=>seleccionarProducto(producto)} className="bg-yellow-500 mr-1 rounded-full p-1 px-2">O</button> 
+                                     
                                 </tr>
                             )
                         })
@@ -128,14 +138,7 @@ export const Crud = () => {
 
                 </table>
 
-                <div className="bg-gray-500">
-                    <h1>opciones crud</h1>
-                    <ul>
-                        <li className="bg-yellow-500"><button onClick = {()=>peticionPut()}>Editar</button></li>
-                        <li className="bg-red-500"><button>Eliminar</button></li>
-                        <li className="bg-green-500"><button>Agregar</button></li>
-                    </ul>
-                </div>
+                
 
 
             </div>
@@ -154,7 +157,7 @@ export const Crud = () => {
                         </div>
                         <div className="p-5 bg-gray-200">
                             <label for=""> Precio del producto </label>
-                            <input type="text" className="form-control" name="precio" id="" aria-describedby="helpId" placeholder=""  value = {parseInt(form.precio)} onChange ={handleChange}/><br />
+                            <input type="number" className="form-control" name="precio" id="" aria-describedby="helpId" placeholder=""  value = {parseInt(form.precio)} onChange ={handleChange}/><br />
 
                         </div>
                         <div className="p-5 bg-gray-200">
@@ -167,8 +170,16 @@ export const Crud = () => {
                             <input type="text" className="form-control" name="imagen" id="" aria-describedby="helpId" placeholder="" value = {form.imagen} onChange ={handleChange} /><br />
                         </div>
                         <div>
-                            <button onClick = {()=>peticionPost()} type ="submit" className="p-1" width="100px">Enviar informacion</button>
+                            <button onClick = {()=>peticionPost()} type ="submit" className="p-1" width="100px"> Agregar producto </button>
                         </div>
+                        <div className="bg-gray-500">
+                   
+                    <ul>
+                        <li className="bg-yellow-500"><button onClick = {()=>peticionPut()}>Editar</button></li>
+                        <li className="bg-red-500"><button onClick = {()=>peticionDelete()}>Eliminar</button></li>
+                        
+                    </ul>
+                </div>
                         
                     </form>
 

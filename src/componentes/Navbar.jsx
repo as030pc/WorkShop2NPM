@@ -27,8 +27,8 @@ const Navbar = () => {
       </a>
     </div>
 
-    <div className=" bg-yellow-500">
-    <Link to = "/crud"> Gestion de productos </Link>
+    <div className="flex items-center text-sm px-4 py-2 leading-none border rounded bg-green-600 text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-amber-600 mt-4 lg:mt-0">
+    <Link to = "/crud"> <img src="https://res.cloudinary.com/axginterprise/image/upload/v1631664731/Vector_kqfnrc.png"></img></Link>
     </div>
     <div>
       <Link to="/carrito" className="flex items-center text-sm px-4 py-2 leading-none border rounded bg-yellow-500 text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-amber-600 mt-4 lg:mt-0"><img src="https://res.cloudinary.com/axginterprise/image/upload/v1631652951/Union_dqixsj.png"></img><h1> | </h1><span className="text-lg font-bold">5</span></Link>
