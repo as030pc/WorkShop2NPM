@@ -9,7 +9,8 @@ export const Crud = () => {
         id:"",
         nombre: "",
         precio: "",
-        cantidad: ""
+        cantidad: "",
+        imagen:""
     })
 
     // useEffect
@@ -43,13 +44,20 @@ export const Crud = () => {
         e.preventDefault()
     }
 
+
+    const seleccionarProducto = () => {
+        
+
+    }
+
     const peticionPost = async () => {
        
         await axios.post(url, {
             id:uuid, 
             nombre:form.nombre,
             precio:form.precio,
-            cantidad:form.cantidad
+            cantidad:form.cantidad,
+            imagen:form.imagen
 
         })
             .then(response =>{
@@ -92,6 +100,8 @@ export const Crud = () => {
                                     <th>{producto.nombre}</th>
                                     <th>{producto.cantidad}</th>
                                     <th>{producto.precio}</th>
+                                    <button > Modificar</button> 
+                                    <button > Eliminar </button>  
                                 </tr>
                             )
                         })
@@ -128,13 +138,18 @@ export const Crud = () => {
                         </div>
                         <div className="p-5 bg-gray-200">
                             <label for=""> Precio del producto </label>
-                            <input type="text" className="form-control" name="precio" id="" aria-describedby="helpId" placeholder=""  value = {form.precio} onChange ={handleChange}/><br />
+                            <input type="text" className="form-control" name="precio" id="" aria-describedby="helpId" placeholder=""  value = {parseInt(form.precio)} onChange ={handleChange}/><br />
 
                         </div>
                         <div className="p-5 bg-gray-200">
                             <label for=""> Cantidad del producto </label>
                             <input type="text" className="form-control" name="cantidad" id="" aria-describedby="helpId" placeholder="" value = {form.cantidad} onChange ={handleChange} /><br />
 
+                        </div>
+                        <div>
+                        <label for=""> Agregar una imagen </label>
+                            <input type="text" className="form-control" name="imagen" id="" aria-describedby="helpId" placeholder="" value = {form.imagen} onChange ={handleChange} /><br />
+                            
                         </div>
                         <div>
                             <button onClick = {()=>peticionPost()} type ="submit">Enviar informacion</button>

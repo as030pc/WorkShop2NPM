@@ -18,21 +18,36 @@
 /* .clase1{
     background-color: var(--color1-primary);
 } */
+.ofertas,
+.populares {
+    border-radius: 16px;
+    margin: 40px;
+    box-shadow: 10px 10px 10px;
+    padding: 40px;
+}
+
+.contenedor-productos{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+}
+
 
 #botonProducto{
     background-color: var(--color1-primary);
     border-radius: 1em;
     color: white;
     padding: 0.5em;
+    width: 100%;
+    
 }
 .tarjetaProductos{
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    margin:0px;
-    width:150px;
+    margin:10px;
+    width:200px;
+    height:400px;
     
-
 }
 
 #x {
@@ -61,13 +76,4 @@
     align-items:center;
     justify-content:center;
     
-}
-#descuento{
-border: 1px solid black;
-border-radius: 2em;
-width:45px;
-height:16px;
-padding: 0.15em;
-margin-bottom: 2em;
-color: var(--color4-fourth);
 }

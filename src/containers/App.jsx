@@ -41,29 +41,29 @@ function App() {
 
   return (
     <div>
-      <h1> <b>Ofertas</b> </h1>
-      <div>
-        {/* <h1 className="w-100% b-2 text-sm">Ofertas</h1> */}
-      </div>
-      {frutos.map((frutos, index) => {
+        <div className="ofertas">
+          <h1> <b>Ofertas</b> </h1>
+          <section className="contenedor-productos">
+            {frutos.map((frutos, index) => {
 
-      return <CardsFrutas key={index} frutas={frutos} />
-      })
+              return <CardsFrutas key={index} frutas={frutos} />
+            })
 
-      }
-      
-      <hr/>
-      
-      <h1> <b>Mas populares</b> </h1>
-      {productos.map((producto, index) => {
+            }
+          </section>
+        </div>
 
-        return <CardsProductos key={index} producto={producto} />
-      })
+        <div className="populares">
+          <h1> <b>Populares</b> </h1>
+          <section className="contenedor-productos">
+            {productos.map((producto, index) => {
 
-      }
+              return <CardsProductos key={index} producto={producto} />
+            })
 
-      
-
+            }
+          </section>
+        </div>
     </div>
   );
 }
