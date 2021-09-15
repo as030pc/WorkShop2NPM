@@ -6,7 +6,8 @@ import {Link} from 'react-router-dom'
 
 export default function Carrito() {
   const [open, setOpen] = useState(true)
-
+  const carrito = JSON.parse(localStorage.getItem('carrito'))
+  const carro = JSON.parse(localStorage.getItem('carro'))
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog as="div" className="fixed inset-0 overflow-hidden" onClose={setOpen}>
@@ -76,8 +77,38 @@ export default function Carrito() {
                             <img src="https://res.cloudinary.com/axginterprise/image/upload/v1631660221/Family_Values_Shopping_b2sgpm.png"></img>
                             <h1 className="text-lg font-medium">Tu canasta esta vacia</h1>
                             <button class="bg-yellow-500 text-white active:bg-yellow-500 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" >
-                            Agregar productos
+                        
+                              Agregar Productos
                             </button>
+
+                            {carrito.map(producto => {
+                                  return(
+                                    <div>
+                                      <h1>{producto.nombre}</h1> 
+                                      <p>{producto.precio}</p> 
+                                      <img src={producto.imagen} alt="imagen producto" style={{width: "100px"}, {height: "100px"}}/>
+                                    </div>
+                                  )
+                                }
+                                 
+                
+                            )
+                            }
+                            <hr/>
+                            {carro.map(producto => {
+                                  return(
+                                    <div>
+                                    <h1>{producto.nombre}</h1> 
+                                    <p>{producto.precio}</p> 
+                                    <img src={producto.imagen} alt="imagen producto" style={{width: "50px"}, {height: "100px"}}/>
+                                  </div>
+                                  )
+                                }
+                                 
+                
+                            )
+                            }
+                            
                         </div>
                       </div>
                         

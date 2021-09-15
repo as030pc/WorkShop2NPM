@@ -86,3 +86,10 @@
     justify-content:center;
     
 }
+
+/* Boton seleccionar item crud */
+
+#btn-select:hover{
+    background-color: greenyellow;
+    border-radius: 50%;
+}

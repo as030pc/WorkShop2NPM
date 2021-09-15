@@ -45,7 +45,7 @@ export const Crud = () => {
     }
 
 
-    const seleccionarProducto = (form) => {
+    const seleccionarProducto = (form) => {        
         setForm({id:form.id,
             nombre:form.nombre,
             cantidad:form.cantidad,
@@ -93,6 +93,7 @@ export const Crud = () => {
     }
 
 
+    // Cuando se le da click a un btn para seleccionar producto del CRUD
 
     // console.log(productos)
 
@@ -126,7 +127,7 @@ export const Crud = () => {
                                     <th>{producto.nombre}</th>
                                     <th>{producto.cantidad}</th>
                                     <th>{producto.precio}</th>
-                                    <button onClick = {()=>seleccionarProducto(producto)} className="bg-yellow-500 mr-1 rounded-full p-1 px-2">O</button> 
+                                    <button onClick = {()=>seleccionarProducto(producto)} className='pl-32' ><img src="https://res.cloudinary.com/axginterprise/image/upload/v1631679958/check-circle-regular_1_q7kajo.png" alt="/" id="btn-select"/></button> 
                                      
                                 </tr>
                             )
@@ -134,7 +135,6 @@ export const Crud = () => {
 
                         }
                     </tbody>
-                    <hr style={{ height: "3px" }, { color: "black" }} />
 
                 </table>
 
