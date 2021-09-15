@@ -18,7 +18,7 @@ export const Crud = () => {
         peticionGet()
     }, [])
 
-    const url = "https://apiworkshop2.herokuapp.com/productos"
+    const url = "https://apiworkshop2.herokuapp.com/productos/"
     const peticionGet = async () => {
 
         await axios.get(url)
@@ -45,7 +45,14 @@ export const Crud = () => {
     }
 
 
-    const seleccionarProducto = () => {
+    const seleccionarProducto = (form) => {
+        setForm({id:form.id,
+            nombre:form.nombre,
+            cantidad:form.cantidad,
+            precio:form.precio,
+            imagen:form.imagen
+
+    })
         
 
     }
@@ -64,6 +71,16 @@ export const Crud = () => {
                 peticionGet()
             }
             )
+    }
+
+    const peticionPut = async ()=>{
+        await axios.put(url+form.id, form)
+        .then(response => {
+            peticionGet();
+        }).catch(error => {
+            console.log(error.message);
+        })
+
     }
 
 
@@ -95,13 +112,12 @@ export const Crud = () => {
                         {productos.map(producto => {
                             return (
                                 <tr>
-
                                     <th>{producto.id}</th>
                                     <th>{producto.nombre}</th>
                                     <th>{producto.cantidad}</th>
                                     <th>{producto.precio}</th>
-                                    <button > Modificar</button> 
-                                    <button > Eliminar </button>  
+                                    <button onClick = {()=>seleccionarProducto(producto)} className="bg-gray-300 mr-1 rounded-lg p-1"> Modificar</button> 
+                                    <button onClick = {()=>seleccionarProducto(producto)}  className="bg-gray-300 mr-1 rounded-lg p-1"> Eliminar </button>  
                                 </tr>
                             )
                         })
@@ -115,7 +131,7 @@ export const Crud = () => {
                 <div className="bg-gray-500">
                     <h1>opciones crud</h1>
                     <ul>
-                        <li className="bg-yellow-500"><button>Editar</button></li>
+                        <li className="bg-yellow-500"><button onClick = {()=>peticionPut()}>Editar</button></li>
                         <li className="bg-red-500"><button>Eliminar</button></li>
                         <li className="bg-green-500"><button>Agregar</button></li>
                     </ul>
@@ -146,16 +162,17 @@ export const Crud = () => {
                             <input type="text" className="form-control" name="cantidad" id="" aria-describedby="helpId" placeholder="" value = {form.cantidad} onChange ={handleChange} /><br />
 
                         </div>
-                        <div>
+                        <div className="p-5 bg-gray-200">
                         <label for=""> Agregar una imagen </label>
                             <input type="text" className="form-control" name="imagen" id="" aria-describedby="helpId" placeholder="" value = {form.imagen} onChange ={handleChange} /><br />
-                            
                         </div>
                         <div>
-                            <button onClick = {()=>peticionPost()} type ="submit">Enviar informacion</button>
+                            <button onClick = {()=>peticionPost()} type ="submit" className="p-1" width="100px">Enviar informacion</button>
                         </div>
                         
                     </form>
+
+                   
                     
                 
             </div>
