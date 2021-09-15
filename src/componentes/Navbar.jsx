@@ -27,7 +27,7 @@ const Navbar = () => {
       </a>
     </div>
 
-    <div className="flex items-center text-sm px-4 py-2 leading-none border rounded bg-green-600 text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-amber-600 mt-4 lg:mt-0">
+    <div className="flex items-center text-sm px-4 py-2 leading-none border rounded bg-red-500 text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-amber-600 mt-4 lg:mt-0">
     <Link to = "/crud"> <img src="https://res.cloudinary.com/axginterprise/image/upload/v1631664731/Vector_kqfnrc.png"></img></Link>
     </div>
     <div>

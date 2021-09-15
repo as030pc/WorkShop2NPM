@@ -1,10 +1,37 @@
 import React, { useState } from 'react'
+import axios from 'axios'
 // import { Modal, ModalBody, ModalFooter } from "reactstrap";
-
 
 //importamos las props de App.jsx las cuales vienen con el nombre de "info"
 // y desestructuramos la data para pasarsela al "card"
 const CardsFrutas = ({ frutas }) => {
+const url = "https://apiworkshop2.herokuapp.com/"
+  // Funcion para agregar al carrito
+  const  [aggProducto, setAggProducto] = useState([])
+  const carrito = []
+
+  const getProductos = async (id) => {
+    if(localStorage.getItem("carrito")){
+      carrito.push(JSON.parse(localStorage.getItem("carrito")))
+    }
+    await axios.get(`${url}frutos/${id}`)
+      .then(response => {
+        // setAggProducto(response.data) //response.data: es una variable 
+        carrito.push(response.data)
+        setAggProducto(carrito)
+        localStorage.setItem("carrito", JSON.stringify(carrito))
+      
+      })
+      .catch(error => {
+        console.log(error.message);
+      })
+  }
+  
+  const aggCarrito = (e)=>{
+    let idProducto = e.target.id
+    getProductos(idProducto)
+    
+  }
 
   const [opendetail, setopendetail] = useState(false)
   const abrirModal = () => { setopendetail(!opendetail) }
@@ -14,7 +41,7 @@ const CardsFrutas = ({ frutas }) => {
 
     <div className="tarjetaProductos">
       <div>
-        <span id="descuento" className="bg-yellow-400">{(((precio - descuento) / precio) * 100).toFixed(0)} % dto</span>
+        <span id="descuento" className="text-yellow-600 bg-yellow-200 rounded-lg border-4 border-yellow-200">{(((precio - descuento) / precio) * 100).toFixed(0)} % dto</span>
         <img src={imagen} alt="imagen producto" />
         <p><b>${precio}</b><del>${descuento}</del></p>
         <p>{nombre}</p>
@@ -50,7 +77,10 @@ const CardsFrutas = ({ frutas }) => {
                   <div>
                   <h3>{nombre}</h3>
                   <h4>{precio}/Kg</h4>
-                  <button className="bg-yellow-500 " >
+                  <button 
+                  className="bg-yellow-500"
+                  id={id}
+                  onClick={(e)=>{aggCarrito(e)}}>
                     Agregar
                   </button>
                   </div>

@@ -18,6 +18,14 @@
 /* .clase1{
     background-color: var(--color1-primary);
 } */
+.text-banner{
+    margin-top:10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .ofertas,
 .populares {
     border-radius: 16px;
@@ -49,6 +57,7 @@
     height:400px;
     
 }
+
 
 #x {
     color:black;

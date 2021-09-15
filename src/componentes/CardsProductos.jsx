@@ -1,8 +1,38 @@
 import React, { useState } from 'react'
+import axios from 'axios'
 
 //importamos las props de App.jsx las cuales vienen con el nombre de "info"
 // y desestructuramos la data para pasarsela al "card"
 const CardsProductos = ({ producto }) => {
+
+    const url = "https://apiworkshop2.herokuapp.com/"
+    // Funcion para agregar al carrito
+    const [aggProducto, setAggProducto] = useState([])
+    const carro = []
+
+    const getProductos = async (id) => {
+        if (localStorage.getItem("carro")) {
+            carro.push(JSON.parse(localStorage.getItem("carro")))
+        }
+        await axios.get(`${url}productos/${id}`)
+            .then(response => {
+                // setAggProducto(response.data) //response.data: es una variable 
+                carro.push(response.data)
+                setAggProducto(carro)
+                localStorage.setItem("carro", JSON.stringify(carro))
+
+            })
+            .catch(error => {
+                console.log(error.message);
+            })
+    }
+
+    const aggCarrito = (e)=>{
+        let idProducto = e.target.id
+        getProductos(idProducto)
+        
+      }    
+
 
     const [opendetail, setopendetail] = useState(false)
     const abrirModal = () => { setopendetail(!opendetail) }
@@ -44,11 +74,13 @@ const CardsProductos = ({ producto }) => {
                                 <div className="relative p-6 flex-auto" id="detalle">
                                     <img src={imagen} alt="imagen Producto" width="472" height="372" />
                                     <div>
-                                    <h3>{nombre}</h3>
-                                    <h4>{precio}/udad</h4>
-                                    <button className="bg-yellow-500" >
-                                        Agregar
-                                    </button>
+                                        <h3>{nombre}</h3>
+                                        <h4>{precio}/udad</h4>
+                                        <button className="bg-yellow-500"
+                                            id={id}
+                                            onClick={(e) => { aggCarrito(e) }}>
+                                            Agregar
+                                        </button>
                                     </div>
                                 </div>
                                 {/*footer*/}
